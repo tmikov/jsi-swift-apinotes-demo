@@ -1,0 +1,23 @@
+# Swift API Notes overlay for the JSI module.
+#
+# Filename must match the module name (JSI -> JSI.apinotes) and live next to
+# the modulemap. Swift's clang importer auto-discovers it — no compiler flag,
+# no header changes, no #ifdefs.
+#
+# This is the entire fix for the Swift/C++ interop issue that motivated
+# facebook/react-native#56770.
+
+Name: JSI
+Tags:
+  - Name: ICast
+    SwiftImportAs: reference
+    SwiftReleaseOp: immortal
+    SwiftRetainOp: immortal
+  - Name: IRuntime
+    SwiftImportAs: reference
+    SwiftReleaseOp: immortal
+    SwiftRetainOp: immortal
+  - Name: ISerialization
+    SwiftImportAs: reference
+    SwiftReleaseOp: immortal
+    SwiftRetainOp: immortal

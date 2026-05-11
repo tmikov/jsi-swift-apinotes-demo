@@ -1,0 +1,5 @@
+module JSI {
+  header "jsi.h"
+  requires cplusplus
+  export *
+}
